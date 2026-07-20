@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVista Indonesia - Smart Eco-Tourism</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B1120;
+        }
+    </style>
+</head>
+<body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HERO SECTION & NAVBAR (LANDING PAGE UTAMA) -->
+    <div class="relative bg-gradient-to-b from-[#0f172a] via-[#0B1120] to-[#070a13] pb-20">
+        <!-- Navbar -->
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between border-b border-slate-800/60">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showFeature('home')">
+                <div class="bg-emerald-500/10 p-2.5 rounded-xl border border-emerald-500/30 text-emerald-400">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold text-white tracking-tight block">EcoVista <span class="text-emerald-400">Indonesia</span></span>
+                    <span class="text-[10px] text-slate-400 tracking-wider uppercase block -mt-1">Smart Eco-Tourism Ecosystem</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <button onclick="showFeature('home')" class="nav-btn text-emerald-400 font-semibold focus:outline-none">Beranda</button>
+                <button onclick="showFeature('destination')" class="nav-btn hover:text-white transition focus:outline-none">Destinasi</button>
+                <button onclick="showFeature('marketplace')" class="nav-btn hover:text-white transition focus:outline-none">Marketplace UMKM</button>
+                <button onclick="showFeature('virtual-tour')" class="nav-btn hover:text-white transition focus:outline-none">Virtual Tour</button>
+                <button onclick="showFeature('learning-ai')" class="nav-btn hover:text-white transition focus:outline-none">Eco Learning & AI</button>
+                <button onclick="showFeature('rewards')" class="nav-btn hover:text-white transition focus:outline-none">Eco Reward</button>
+                <button onclick="showFeature('analytics')" class="nav-btn hover:text-white transition focus:outline-none">Analytics</button>
+            </div>
+            
+            <!-- SISI KANAN NAVBAR -->
+            <div class="flex items-center space-x-4">
+                <!-- PILIHAN BAHASA -->
+                <div class="relative inline-block text-left">
+                    <select class="bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs rounded-xl px-3 py-2 focus:ring-1 focus:ring-emerald-500 outline-none cursor-pointer font-medium">
+                        <option value="id">🇮🇩 ID</option>
+                        <option value="en">🇬🇧 EN</option>
+                    </select>
+                </div>
+
+                <!-- NOTIFIKASI -->
+                <button class="text-slate-300 hover:text-white transition p-2 text-lg">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                
+                <!-- PROFIL -->
+                <div class="w-9 h-9 bg-emerald-600 rounded-full flex items-center justify-center font-bold text-white shadow-lg shadow-emerald-900/30 cursor-pointer">
+                    SM
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Hero Content -->
+        <div id="home-content" class="max-w-7xl mx-auto px-6 mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-400">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Platform Smart Eco-Tourism Indonesia</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] tracking-tight">
+                    Jelajahi Indonesia secara <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">cerdas, personal,</span> dan <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-400">berkelanjutan</span>
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                    EcoVista Indonesia menghubungkan wisatawan, UMKM lokal, pengelola destinasi, dan pemerintah dalam satu ekosistem digital berbasis Artificial Intelligence.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <span class="flex items-center space-x-2 bg-emerald-500 text-white font-medium text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-900/40"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Rekomendasi AI</span></span>
+                    <span class="flex items-center space-x-2 bg-slate-800/80 border border-slate-700/60 text-slate-200 font-medium text-sm px-4 py-2.5 rounded-xl"><i class="fa-solid fa-users-rectangle"></i> <span>Carrying Capacity</span></span>
+                </div>
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-md">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">1.245+</div>
+                        <div class="text-xs text-slate-400 mt-0.5">Destinasi aktif</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">18.562</div>
+                        <div class="text-xs text-slate-400 mt-0.5">UMKM terdaftar</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">72%</div>
+                        <div class="text-xs text-slate-400 mt-0.5">Rata-rata kepadatan</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button onclick="showFeature('destination')" class="flex items-center space-x-2 bg-emerald-500/20 text-emerald-400 font-semibold px-5 py-3 rounded-xl border border-emerald-500/30 hover:bg-emerald-500/30 transition text-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i> <span>Cari Destinasi</span>
+                    </button>
+                    <button onclick="showFeature('virtual-tour')" class="flex items-center space-x-2 bg-slate-800/50 text-slate-300 font-semibold px-5 py-3 rounded-xl border border-slate-700/50 hover:bg-slate-800 transition text-sm">
+                        <i class="fa-solid fa-circle-play"></i> <span>Virtual Tour</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visual Kanan -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="w-full max-w-[340px] bg-[#131B2E] rounded-[32px] overflow-hidden border border-slate-800 shadow-2xl relative">
+                    <div class="h-[480px] bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-black/30"></div>
+                        <div class="absolute top-6 left-6 right-6 flex justify-between items-start">
+                            <span class="bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white">Wonderful Indonesia</span>
+                        </div>
+                        <div class="absolute bottom-8 left-6 right-6 text-left space-y-4">
+                            <h3 class="text-2xl font-bold text-white leading-tight">Discover wonderful places in Indonesia</h3>
+                            <button onclick="showFeature('destination')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-4 rounded-xl shadow-lg transition flex items-center justify-between text-sm">
+                                <span>Get started</span> <i class="fa-solid fa-arrow-right-long"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DYNAMIC FEATURES CONTAINER -->
+    <div id="features-container">
+        
+        <!-- SECTION 1: DESTINASI (Smart Destination Explorer) -->
+        <div id="feature-destination" class="feature-section max-w-7xl mx-auto px-6 py-16">
+            <div class="mb-10">
+                <h2 class="text-3xl font-extrabold text-white">Smart Destination Explorer</h2>
+                <p class="text-slate-400 text-sm mt-1">Cari destinasi berdasarkan wilayah, kategori wisata, dan rekomendasi AI yang dipersonalisasi.</p>
+            </div>
+            
+            <!-- Filter Grid Dinamis -->
+            <div class="bg-[#111827] border border-slate-800 p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end mb-12">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Pulau</label>
+                    <select id="filter-pulau" onchange="updateProvinsi()" class="w-full bg-[#1f2937] border border-slate-700 text-white text-sm rounded-xl p-3 focus:ring-1 focus:ring-emerald-500 outline-none cursor-pointer">
+                        <option value="" disabled selected>Pilih Pulau</option>
+                        <option value="jawa">Jawa</option>
+                        <option value="sumatera">Sumatera</option>
+                        <option value="kalimantan">Kalimantan</option>
+                        <option value="sulawesi">Sulawesi</option>
+                        <option value="bali-nusa">Bali & Nusa Tenggara</option>
+                        <option value="maluku-papua">Maluku & Papua</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Provinsi</label>
+                    <select id="filter-provinsi" onchange="updateKota()" class="w-full bg-[#1f2937] border border-slate-700 text-white text-sm rounded-xl p-3 focus:ring-1 focus:ring-emerald-500 outline-none cursor-pointer" disabled>
+                        <option value="" disabled selected>Pilih Provinsi</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Kabupaten / Kota</label>
+                    <select id="filter-kota" class="w-full bg-[#1f2937] border border-slate-700 text-white text-sm rounded-xl p-3 focus:ring-1 focus:ring-emerald-500 outline-none cursor-pointer" disabled>
+                        <option value="" disabled selected>Pilih Wilayah</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Kategori Wisata</label>
+                    <select id="filter-kategori" class="w-full bg-[#1f2937] border border-slate-700 text-white text-sm rounded-xl p-3 focus:ring-1 focus:ring-emerald-500 outline-none cursor-pointer">
+                        <option value="semua">Semua Kategori</option>
+                        <option value="gunung">Gunung / Pegunungan</option>
+                        <option value="pantai">Pantai & Laut</option>
+                        <option value="budaya">Desa Wisata / Budaya</option>
+                        <option value="alam">Konservasi / Alam</option>
+                    </select>
+                </div>
+                <button onclick="cariDestinasi()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-4 rounded-xl transition text-sm shadow-lg shadow-emerald-900/20">
+                    Temukan Destinasi Terbaik
+                </button>
+            </div>
+
+            <!-- POSISI 1: REKOMENDASI AI TERPOPULER / HASIL PENCARIAN -->
+            <div id="section-title-hasil" class="mb-6 flex items-center space-x-2 text-emerald-400 font-semibold">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="label-rekomendasi">Rekomendasi AI Terpopuler</span>
+            </div>
+            
+            <div id="destinasi-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- Data Awal Default -->
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=500&auto=format&fit=crop');"></div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex justify-between items-center"><span class="text-xs bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-md">95% Match</span> <span class="text-sm text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.9</span></div>
+                        <h4 class="text-lg font-bold text-white">Gunung Bromo</h4>
+                        <p class="text-slate-400 text-xs"><i class="fa-solid fa-location-dot mr-1"></i> Probolinggo, Jawa Timur</p>
+                        <p class="text-slate-400 text-sm">Menyajikan pemandangan matahari terbit super indah dengan hamparan pasir berbisik yang luas.</p>
+                    </div>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1538332576187-e2a0d4b9957d?q=80&w=500&auto=format&fit=crop');"></div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex justify-between items-center"><span class="text-xs bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-md">93% Match</span> <span class="text-sm text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.8</span></div>
+                        <h4 class="text-lg font-bold text-white">Kawah Ijen</h4>
+                        <p class="text-slate-400 text-xs"><i class="fa-solid fa-location-dot mr-1"></i> Banyuwangi, Jawa Timur</p>
+                        <p class="text-slate-400 text-sm">Terkenal di dunia berkat fenomena api biru (Blue Fire) alami yang hanya ada dua di dunia.</p>
+                    </div>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=500&auto=format&fit=crop');"></div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex justify-between items-center"><span class="text-xs bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-md">91% Match</span> <span class="text-sm text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.7</span></div>
+                        <h4 class="text-lg font-bold text-white">Raja Ampat</h4>
+                        <p class="text-slate-400 text-xs"><i class="fa-solid fa-location-dot mr-1"></i> Raja Ampat, Papua Barat Daya</p>
+                        <p class="text-slate-400 text-sm">Surga bawah laut global dengan keanekaragaman terumbu karang tertinggi di dunia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POSISI 2: ECO SMART TOURISM (SEKARANG DI BAWAH REKOMENDASI AI) -->
+            <div class="mb-12 bg-[#111827] border border-slate-800/80 rounded-3xl p-8 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between mb-2">
+                    <h3 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Eco Smart Tourism</h3>
+                    <span class="text-[10px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-md font-bold uppercase tracking-wider">AI Crowd Control</span>
+                </div>
+                <p class="text-slate-400 text-sm mb-8">Reservasi wisata terintegrated dengan carrying capacity destinasi untuk mencegah over-tourism.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Prediksi Kepadatan Pengunjung -->
+                    <div class="bg-[#0f172a] border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                                <h4 class="text-base font-bold text-white">Prediksi Kepadatan Pengunjung</h4>
+                                <i class="fa-solid fa-chart-line text-emerald-400"></i>
+                            </div>
+                            <div class="space-y-4 text-sm font-medium">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300">Hari ini</span>
+                                    <span class="flex items-center space-x-2 text-xs bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full"><span class="h-2 w-2 rounded-full bg-emerald-400"></span> <span>Rendah</span></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300">Besok</span>
+                                    <span class="flex items-center space-x-2 text-xs bg-amber-500/10 text-amber-400 font-bold px-3 py-1 rounded-full"><span class="h-2 w-2 rounded-full bg-amber-400"></span> <span>Sedang</span></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300">Akhir pekan</span>
+                                    <span class="flex items-center space-x-2 text-xs bg-rose-500/10 text-rose-400 font-bold px-3 py-1 rounded-full"><span class="h-2 w-2 rounded-full bg-rose-400"></span> <span>Tinggi</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Rekomendasi AI -->
+                        <div class="mt-8 bg-emerald-500/5 border border-emerald-500/20 p-4 rounded-xl flex items-start space-x-3">
+                            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 mt-0.5 text-base"></i>
+                            <div>
+                                <h5 class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Rekomendasi AI</h5>
+                                <p class="text-slate-300 text-xs mt-1 leading-relaxed">Waktu terbaik berkunjung: <strong>Selasa–Kamis pukul 07.00–10.00</strong> untuk pengalaman lebih nyaman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reservasi Destinasi -->
+                    <div class="bg-[#0f172a] border border-slate-800 p-6 rounded-2xl space-y-5">
+                        <h4 class="text-base font-bold text-white border-b border-slate-800 pb-4">Reservasi Destinasi</h4>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Pilih tanggal kunjungan</label>
+                            <input type="text" value="12 Agustus 2026" readonly class="w-full bg-[#1e293b] border border-slate-700 text-white text-sm rounded-xl p-3 focus:outline-none cursor-pointer">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Jumlah wisatawan</label>
+                            <div class="flex items-center space-x-3">
+                                <button class="w-10 h-10 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 rounded-xl flex items-center justify-center font-bold text-lg text-slate-300">-</button>
+                                <div class="flex-1 bg-[#1e293b] border border-slate-700 rounded-xl py-2 px-4 text-center text-sm font-bold text-white">2 Orang</div>
+                                <button class="w-10 h-10 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 rounded-xl flex items-center justify-center font-bold text-lg text-slate-300">+</button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <div class="flex justify-between items-center text-xs mb-2">
+                                <span class="font-semibold text-slate-400">Sisa kuota hari ini</span>
+                                <span class="font-bold text-emerald-400">248 Tersisa</span>
+                            </div>
+                            <div class="w-full bg-[#1e293b] h-3 rounded-full overflow-hidden border border-slate-700">
+                                <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-[65%]" title="Carrying Capacity"></div>
+                            </div>
+                            <span class="text-[10px] text-slate-500 mt-1 block">Carrying Capacity</span>
+                        </div>
+
+                        <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl transition text-sm flex items-center justify-center space-x-2 shadow-lg shadow-emerald-900/30">
+                            <i class="fa-regular fa-calendar-check"></i> <span>Reserve Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: LOCAL ECONOMIC MARKETPLACE -->
+        <div id="feature-marketplace" class="feature-section hidden max-w-7xl mx-auto px-6 py-16">
+            <div class="mb-10">
+                <span class="text-xs bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full border border-emerald-500/20">Pemberdayaan UMKM Lokal</span>
+                <h2 class="text-3xl font-extrabold text-white mt-3">Local Economic Marketplace</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden p-5 space-y-3">
+                    <div class="h-44 bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=500&auto=format&fit=crop');"></div>
+                    <h4 class="text-base font-bold text-white">Batik Mojokerto Heritage</h4>
+                    <p class="text-slate-400 text-xs">Batik tulis khas Majapahit dengan pewarna alami.</p>
+                    <div class="flex justify-between items-center pt-2"><span class="text-sm font-bold text-white">Rp250.000</span><button class="bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg">Beli</button></div>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden p-5 space-y-3">
+                    <div class="h-44 bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500&auto=format&fit=crop');"></div>
+                    <h4 class="text-base font-bold text-white">Kopi Ijen Arabica</h4>
+                    <p class="text-slate-400 text-xs">Kopi hasil specialty petani lokal Banyuwangi.</p>
+                    <div class="flex justify-between items-center pt-2"><span class="text-sm font-bold text-white">Rp95.000</span><button class="bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg">Beli</button></div>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden p-5 space-y-3">
+                    <div class="h-44 bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=500&auto=format&fit=crop');"></div>
+                    <h4 class="text-base font-bold text-white">Paket Wisata Desa Budaya</h4>
+                    <p class="text-slate-400 text-xs">Live budaya autentik langsung bersama warga.</p>
+                    <div class="flex justify-between items-center pt-2"><span class="text-sm font-bold text-white">Rp450.000</span><button class="bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg">Pesan</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: VIRTUAL TOUR & IMMERSIVE EXPERIENCE -->
+        <div id="feature-virtual-tour" class="feature-section hidden max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    <h2 class="text-3xl font-extrabold text-white">Immersive Virtual Tour</h2>
+                    <p class="text-slate-400 text-sm">Jelajahi keindahan Indonesia secara 360 derajat sebelum melakukan kunjungan fisik langsung.</p>
+                    <div class="space-y-2">
+                        <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 flex justify-between"><span>Festival Budaya Banyuwangi</span><span class="text-blue-400">24 Agt</span></div>
+                        <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 flex justify-between"><span>Majapahit Cultural Week</span><span class="text-purple-400">05 Sep</span></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-[320px] bg-[#111827] border border-slate-800 rounded-2xl p-4 text-center">
+                        <div class="h-60 rounded-xl bg-cover bg-center mb-2" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=400&auto=format&fit=crop');"></div>
+                        <span class="text-xs text-slate-400 font-bold">VR View Mode Enabled</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ECO LEARNING & AI ASSISTANT -->
+        <div id="feature-learning-ai" class="feature-section hidden max-w-7xl mx-auto px-6 py-16">
+            <div class="mb-10">
+                <h2 class="text-3xl font-extrabold text-white">Eco Learning & AI Assistant</h2>
+                <p class="text-slate-400 text-sm mt-1">Tingkatkan kepedulian lingkungan Anda dan dapatkan bantuan asisten virtual berbasis kecerdasan buatan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-graduation-cap text-emerald-400"></i> <span>Modul Edukasi Berkelanjutan</span>
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl hover:border-emerald-500/40 transition cursor-pointer">
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded font-bold uppercase">Basic</span>
+                            <h4 class="text-base font-bold text-white mt-3">Prinsip Dasar Ekowisata</h4>
+                            <p class="text-slate-400 text-xs mt-1">Pahami cara meminimalkan dampak negatif terhadap ekosistem setempat.</p>
+                            <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+                                <span><i class="fa-regular fa-clock mr-1"></i> 15 Menit</span>
+                                <span class="text-emerald-400 font-semibold">Mulai Belajar <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl hover:border-emerald-500/40 transition cursor-pointer">
+                            <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded font-bold uppercase">Intermediate</span>
+                            <h4 class="text-base font-bold text-white mt-3">Mengurangi Jejak Karbon Kunjungan</h4>
+                            <p class="text-slate-400 text-xs mt-1">Panduan praktis memilih transportasi dan kalkulator emisi harian.</p>
+                            <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+                                <span><i class="fa-regular fa-clock mr-1"></i> 25 Menit</span>
+                                <span class="text-emerald-400 font-semibold">Mulai Belajar <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Assistant Box -->
+                <div class="lg:col-span-5 bg-[#111827] border border-slate-800 rounded-3xl p-6 flex flex-col justify-between h-[400px] shadow-xl">
+                    <div>
+                        <div class="flex items-center space-x-3 border-b border-slate-800/80 pb-4 mb-4">
+                            <div class="w-10 h-10 bg-emerald-500/15 border border-emerald-500/30 rounded-full flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-wand-magic-sparkles text-lg animate-pulse"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">EcoVista AI Assistant</h4>
+                                <span class="text-[10px] text-emerald-400 flex items-center"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1 animate-ping"></span> Online & Siap Membantu</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3 overflow-y-auto max-h-[220px] text-xs pr-1">
+                            <div class="bg-slate-800/60 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-slate-300">
+                                Halo! Saya asisten AI Anda. Ada yang bisa saya bantu terkait rencana liburan ramah lingkungan Anda di Indonesia?
+                            </div>
+                            <div class="bg-emerald-600/20 p-3 rounded-2xl rounded-tr-none max-w-[85%] ml-auto text-emerald-300 text-right">
+                                Rekomendasikan destinasi sepi di Jawa Timur untuk minggu ini dong.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative mt-4">
+                        <input type="text" placeholder="Tanyakan sesuatu pada AI..." class="w-full bg-[#0f172a] border border-slate-800 focus:border-emerald-500 rounded-xl py-3 pl-4 pr-12 text-xs text-white placeholder-slate-500 outline-none transition">
+                        <button class="absolute right-2 top-2 w-8 h-8 bg-emerald-500 hover:bg-emerald-600 rounded-lg flex items-center justify-center text-white transition">
+                            <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: ECO REWARDS -->
+        <div id="feature-rewards" class="feature-section hidden max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 class="text-3xl font-extrabold text-white">Eco Reward System</h2>
+                    <p class="text-slate-400 text-sm">Dapatkan poin khusus setiap kali Anda mendukung program ramah lingkungan.</p>
+                    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 flex justify-between text-xs items-center">
+                        <span class="text-slate-300"><i class="fa-solid fa-bus text-emerald-400 mr-2"></i> Menggunakan transportasi umum</span>
+                        <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-1 rounded">+120 Poin</span>
+                    </div>
+                    <div class="bg-[#111827] p-4 rounded-xl border border-slate-800 flex justify-between text-xs items-center">
+                        <span class="text-slate-300"><i class="fa-solid fa-store text-emerald-400 mr-2"></i> Membeli Produk Produk UMKM Lokal</span>
+                        <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-1 rounded">+250 Poin</span>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-7 bg-[#111827] border border-slate-800 rounded-3xl p-6 shadow-xl space-y-6">
+                    <div class="flex justify-between items-center border-b border-slate-800/80 pb-4">
+                        <div>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold block">Total Saldo Poin Anda</span>
+                            <span class="text-3xl font-black text-emerald-400 block mt-0.5">2.450 <span class="text-xs font-normal text-slate-400">Poin</span></span>
+                        </div>
+                        <i class="fa-solid fa-wallet text-slate-600 text-2xl"></i>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-4"><i class="fa-solid fa-gift text-emerald-400 mr-1.5"></i> Tukar Poin dengan:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-[#0f172a] border border-slate-800 p-4 rounded-xl text-center flex flex-col justify-between items-center hover:border-emerald-500/30 transition">
+                                <div class="w-10 h-10 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-400 text-sm mb-2"><i class="fa-solid fa-ticket"></i></div>
+                                <h5 class="text-xs font-bold text-white">Voucher Belanja UMKM</h5>
+                                <span class="text-[10px] text-amber-400 font-bold mt-2 bg-amber-500/5 px-2 py-0.5 rounded border border-amber-500/20">500 Poin</span>
+                                <button class="w-full mt-3 bg-slate-800 hover:bg-emerald-500 hover:text-white text-slate-300 font-bold py-1.5 rounded-lg text-[10px] transition">Tukar</button>
+                            </div>
+                            <div class="bg-[#0f172a] border border-slate-800 p-4 rounded-xl text-center flex flex-col justify-between items-center hover:border-emerald-500/30 transition">
+                                <div class="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400 text-sm mb-2"><i class="fa-solid fa-tree"></i></div>
+                                <h5 class="text-xs font-bold text-white">Donasi 1 Pohon Bakau</h5>
+                                <span class="text-[10px] text-emerald-400 font-bold mt-2 bg-emerald-500/5 px-2 py-0.5 rounded border border-emerald-500/20">1.000 Poin</span>
+                                <button class="w-full mt-3 bg-slate-800 hover:bg-emerald-500 hover:text-white text-slate-300 font-bold py-1.5 rounded-lg text-[10px] transition">Tukar</button>
+                            </div>
+                            <div class="bg-[#0f172a] border border-slate-800 p-4 rounded-xl text-center flex flex-col justify-between items-center hover:border-emerald-500/30 transition">
+                                <div class="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-sm mb-2"><i class="fa-solid fa-plane"></i></div>
+                                <h5 class="text-xs font-bold text-white">Diskon Tiket Masuk Fisik</h5>
+                                <span class="text-[10px] text-blue-400 font-bold mt-2 bg-blue-500/5 px-2 py-0.5 rounded border border-blue-500/20">1.500 Poin</span>
+                                <button class="w-full mt-3 bg-slate-800 hover:bg-emerald-500 hover:text-white text-slate-300 font-bold py-1.5 rounded-lg text-[10px] transition">Tukar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: ANALYTICS DASHBOARD -->
+        <div id="feature-analytics" class="feature-section hidden max-w-7xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-extrabold text-white mb-6">AI Tourism Analytics</h2>
+            <!-- Hanya menampilkan metrik analitik murni sesuai instruksi -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl">
+                    <span class="text-xs text-slate-400">Pengunjung Hari Ini</span>
+                    <span class="text-2xl font-black block mt-1 text-white">28.560</span>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl">
+                    <span class="text-xs text-slate-400">Transaksi UMKM</span>
+                    <span class="text-2xl font-black block mt-1 text-white">Rp850 JT</span>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl">
+                    <span class="text-xs text-slate-400">Kepuasan Wisatawan</span>
+                    <span class="text-2xl font-black block mt-1 text-white">95%</span>
+                </div>
+                <div class="bg-[#111827] border border-slate-800 p-5 rounded-2xl">
+                    <span class="text-xs text-slate-400">Carbon Saved</span>
+                    <span class="text-2xl font-black block mt-1 text-emerald-400">2.8 Ton</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EKOSISTEM PARIWISATA -->
+    <div id="ecosystem-footer-section" class="w-full bg-gradient-to-t from-[#070a13] to-[#0B1120] border-t border-slate-900 py-16 mt-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+                Universal Digital Integration
+            </div>
+            <h2 class="text-3xl font-extrabold text-white mb-3">Satu Platform, Seluruh Ekosistem Pariwisata</h2>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto mb-10 leading-relaxed">EcoVista memadukan berbagai pilar pariwisata Indonesia ke dalam jaringan terpusat pintar guna menciptakan sinergi sirkular yang menguntungkan semua pihak.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div class="bg-[#111827]/60 border border-slate-800/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h4 class="text-sm font-bold text-white">Wisatawan</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Mendapat panduan berbasis AI, info crowd-control *real-time*, dan insentif hadiah menarik.</p>
+                </div>
+                <div class="bg-[#111827]/60 border border-slate-800/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-teal-500/10 text-teal-400 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-store"></i></div>
+                    <h4 class="text-sm font-bold text-white">Pelaku UMKM</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Akses pasar digital langsung (*marketplace*) tanpa perantara untuk produk lokal autentik.</p>
+                </div>
+                <div class="bg-[#111827]/60 border border-slate-800/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-users-gear"></i></div>
+                    <h4 class="text-sm font-bold text-white">Pengelola Destinasi</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Instrumen manajemen kuota pengunjung terotomatisasi untuk menghindari kerusakan alam.</p>
+                </div>
+                <div class="bg-[#111827]/60 border border-slate-800/80 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4 class="text-sm font-bold text-white">Pemerintah & Dinas</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Big data analitik pariwisata akurat guna perumusan regulasi jangka panjang.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#070a13] border-t border-slate-950 py-12 text-center text-xs text-slate-500">
+        <p class="text-slate-400 text-sm mb-2">EcoVista Indonesia Ecosystem</p>
+        <p>© 2026 Smart Eco-Tourism Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT DATA & NAVIGASI -->
+    <script>
+        const wilayahData = {
+            "jawa": {
+                "jawa-timur": {
+                    "nama": "Jawa Timur",
+                    "kota": {
+                        "probolinggo": { nama: "Kab. Probolinggo", destinasi: [{ nama: "Gunung Bromo", kat: "gunung", img: "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=500", desc: "Keindahan matahari terbit dan lautan pasir berbisik vulkanik legendaris." }] },
+                        "banyuwangi": { nama: "Kab. Banyuwangi", destinasi: [{ nama: "Kawah Ijen", kat: "alam", img: "https://images.unsplash.com/photo-1538332576187-e2a0d4b9957d?q=80&w=500", desc: "Fenomena Blue Fire menakjubkan dan danau asam terbesar." }, { nama: "Taman Nasional Baluran", kat: "alam", img: "https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?q=80&w=500", desc: "Little Africa in Java, padang sabana luas dengan satwa liar." }] },
+                        "malang": { nama: "Kab. Malang", destinasi: [{ nama: "Desa Wisata Pujon Kidul", kat: "budaya", img: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=500", desc: "Desa wisata agrowisata dengan pemandangan sawah hijau asri." }] }
+                    }
+                },
+                "jawa-tengah": {
+                    "nama": "Jawa Tengah",
+                    "kota": {
+                        "magelang": { nama: "Kab. Magelang", destinasi: [{ nama: "Candi Borobudur", kat: "budaya", img: "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?q=80&w=500", desc: "Monumen Buddha terbesar di dunia, warisan budaya UNESCO." }] },
+                        "jepara": { nama: "Kab. Jepara", destinasi: [{ nama: "Kepulauan Karimunjawa", kat: "pantai", img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=500", desc: "Taman laut nasional dengan terumbu karang indah dan pantai pasir putih." }] }
+                    }
+                },
+                "diy-yogyakarta": {
+                    "nama": "DI Yogyakarta",
+                    "kota": {
+                        "gunungkidul": { nama: "Kab. Gunungkidul", destinasi: [{ nama: "Pantai Indrayanti", kat: "pantai", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=500", desc: "Pantai berpasir putih bersih dengan tebing karang megah." }] }
+                    }
+                }
+            },
+            "sumatera": {
+                "sumatera-utara": {
+                    "nama": "Sumatera Utara",
+                    "kota": {
+                        "toba": { nama: "Kab. Toba", destinasi: [{ nama: "Danau Toba & Pulau Samosir", kat: "alam", img: "https://images.unsplash.com/photo-1572445892866-992a5d9111c1?q=80&w=500", desc: "Danau vulkanik terbesar di dunia yang menyimpan kebudayaan Batak yang kental." }] }
+                    }
+                },
+                "sumatera-barat": {
+                    "nama": "Sumatera Barat",
+                    "kota": {
+                        "padang-pariaman": { nama: "Kab. Padang Pariaman", destinasi: [{ nama: "Lembah Anai", kat: "alam", img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=500", desc: "Air terjun indah tepat di pinggir jalan lintas pulau Sumatera." }] }
+                    }
+                }
+            },
+            "bali-nusa": {
+                "bali": {
+                    "nama": "Bali",
+                    "kota": {
+                        "gianyar": { nama: "Kab. Gianyar (Ubud)", destinasi: [{ nama: "Terasering Tegalalang", kat: "alam", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=500", desc: "Sawah berundak khas Bali bernuansa damai dan hijau tropis." }] },
+                        "klungkung": { nama: "Kab. Klungkung", destinasi: [{ nama: "Nusa Penida", kat: "pantai", img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=500", desc: "Pantai Kelingking yang ikonik dengan tebing berbentuk T-Rex." }] }
+                    }
+                },
+                "ntb": {
+                    "nama": "Nusa Tenggara Barat",
+                    "kota": {
+                        "lombok-utara": { nama: "Kab. Lombok Utara", destinasi: [{ nama: "Gili Trawangan", kat: "pantai", img: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=500", desc: "Pulau bebas kendaraan bermotor dengan kecantikan terumbu karang biru." }] }
+                    }
+                }
+            },
+            "kalimantan": {
+                "kalimantan-timur": {
+                    "nama": "Kalimantan Timur",
+                    "kota": {
+                        "berau": { nama: "Kab. Berau", destinasi: [{ nama: "Kepulauan Derawan", kat: "pantai", img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=500", desc: "Habitat alami penyu hijau besar dan ubur-ubur tanpa sengat di Kakaban." }] }
+                    }
+                }
+            },
+            "sulawesi": {
+                "sulawesi-utara": {
+                    "nama": "Sulawesi Utara",
+                    "kota": {
+                        "manado": { nama: "Kota Manado", destinasi: [{ nama: "Taman Nasional Bunaken", kat: "pantai", img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=500", desc: "Biodiversitas bawah laut kelas dunia dengan dinding karang raksasa." }] }
+                    }
+                }
+            },
+            "maluku-papua": {
+                "papua-barat": {
+                    "nama": "Papua Barat Daya",
+                    "kota": {
+                        "raja-ampat": { nama: "Kab. Raja Ampat", destinasi: [{ nama: "Kepulauan Piaynemo", kat: "pantai", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=500", desc: "Gugusan pulau karang (karst) eksotis di tengah laut biru jernih." }] }
+                    }
+                }
+            }
+        };
+
+        function updateProvinsi() {
+            const pulau = document.getElementById("filter-pulau").value;
+            const provSelect = document.getElementById("filter-provinsi");
+            const kotaSelect = document.getElementById("filter-kota");
+            
+            provSelect.innerHTML = '<option value="" disabled selected>Pilih Provinsi</option>';
+            kotaSelect.innerHTML = '<option value="" disabled selected>Pilih Wilayah</option>';
+            kotaSelect.disabled = true;
+
+            if (wilayahData[pulau]) {
+                Object.keys(wilayahData[pulau]).forEach(provKey => {
+                    provSelect.innerHTML += `<option value="${provKey}">${wilayahData[pulau][provKey].nama}</option>`;
+                });
+                provSelect.disabled = false;
+            }
+        }
+
+        function updateKota() {
+            const pulau = document.getElementById("filter-pulau").value;
+            const provinsi = document.getElementById("filter-provinsi").value;
+            const kotaSelect = document.getElementById("filter-kota");
+            
+            kotaSelect.innerHTML = '<option value="" disabled selected>Pilih Wilayah</option>';
+
+            if (wilayahData[pulau] && wilayahData[pulau][provinsi]) {
+                const kotaObj = wilayahData[pulau][provinsi].kota;
+                Object.keys(kotaObj).forEach(kotaKey => {
+                    kotaSelect.innerHTML += `<option value="${kotaKey}">${kotaObj[kotaKey].nama}</option>`;
+                });
+                kotaSelect.disabled = false;
+            }
+        }
+
+        function cariDestinasi() {
+            const pulau = document.getElementById("filter-pulau").value;
+            const provinsi = document.getElementById("filter-provinsi").value;
+            const kota = document.getElementById("filter-kota").value;
+            const kategori = document.getElementById("filter-kategori").value;
+            
+            const grid = document.getElementById("destinasi-grid");
+            const label = document.getElementById("label-rekomendasi");
+            
+            if (!pulau || !provinsi || !kota) {
+                alert("Silakan pilih Pulau, Provinsi, dan Kota/Kabupaten terlebih dahulu!");
+                return;
+            }
+
+            const dataKota = wilayahData[pulau][provinsi].kota[kota];
+            let listDestinasi = dataKota ? dataKota.destinasi : [];
+
+            if (kategori !== "semua") {
+                listDestinasi = listDestinasi.filter(d => d.kat === kategori);
+            }
+
+            grid.innerHTML = "";
+            label.innerText = `Hasil Pencarian di ${dataKota.nama}`;
+
+            if (listDestinasi.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500 bg-[#111827] border border-slate-800 rounded-2xl">
+                        <i class="fa-regular fa-folder-open text-3xl mb-3 block text-slate-600"></i>
+                        Destinasi dengan kategori tersebut belum tersedia di wilayah ini.
+                    </div>
+                `;
+                return;
+            }
+
+            listDestinasi.forEach(dest => {
+                const matchRate = Math.floor(Math.random() * (98 - 90 + 1)) + 90;
+                grid.innerHTML += `
+                    <div class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('${dest.img}');"></div>
+                        <div class="p-5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-md">${matchRate}% Match</span> 
+                                <span class="text-sm text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.8</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white">${dest.nama}</h4>
+                            <p class="text-slate-400 text-xs"><i class="fa-solid fa-location-dot mr-1"></i> ${dataKota.nama}, ${wilayahData[pulau][provinsi].nama}</p>
+                            <p class="text-slate-400 text-sm">${dest.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function showFeature(featureName) {
+            const sections = document.querySelectorAll('.feature-section');
+            sections.forEach(section => section.classList.add('hidden'));
+
+            const homeContent = document.getElementById('home-content');
+            const ecoSystemSection = document.getElementById('ecosystem-footer-section');
+
+            if (featureName === 'home') {
+                homeContent.classList.remove('hidden');
+                ecoSystemSection.classList.remove('hidden');
+                document.getElementById('feature-destination').classList.remove('hidden');
+            } else {
+                homeContent.classList.add('hidden');
+                ecoSystemSection.classList.add('hidden');
+                const activeSection = document.getElementById('feature-' + featureName);
+                if (activeSection) activeSection.classList.remove('hidden');
+            }
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-emerald-400', 'font-semibold');
+                btn.classList.add('text-slate-300');
+            });
+
+            if(window.event && window.event.currentTarget && window.event.currentTarget.classList.contains('nav-btn')) {
+                window.event.currentTarget.classList.add('text-emerald-400', 'font-semibold');
+            }
+        }
+    </script>
+</body>
+</html>
